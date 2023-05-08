@@ -13,7 +13,7 @@ import "../styles/index.css";
 let Home = props => {
 return (
 <div
-className="text-center pt-5 bg-dark text-white"
+className="text-center pt-5 bg-light text-black"
 style={{ height: "100vh", fontSize: "100px" }}
 >
 <p className="d-inline px-2">
@@ -40,10 +40,11 @@ one: PropTypes.string,
 // This function and logic is not mine
 let counter = 0;
 setInterval(function() {
-const nfour = Math.floor(counter / 1000);
-const nthree = Math.floor(counter / 100);
-const ntwo = Math.floor(counter / 10);
-const none = Math.floor(counter / 1);
+ const nfour = Math.floor(counter % 10000 / 1000);
+ const nthree = Math.floor(counter % 1000 / 100);
+ const ntwo = Math.floor(counter % 100 / 10);
+ const none = Math.floor(counter % 10 / 1);
+    
 console.log(nfour, nthree, ntwo, none);
 counter++;
 ReactDOM.render(
