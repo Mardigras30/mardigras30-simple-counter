@@ -3,24 +3,24 @@ import React from "react";
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
-const Home = () => {
+let Home = props => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	<div
+		className="text-center pt-5 bg-dark text-white"
+		style={{ height: "100vh", fontSize: "100px" }}
+	  >
+		<p className="d-inline px-2">
+		  <i className="far fa-clock"></i>
+		</p>
+		<div className="d-inline">
+		  <p className="d-inline digitFour">{props.four}</p>
+		  <p className="d-inline digitThree">3</p>
+		  <p className="d-inline digitTwo">2</p>
+		  <p className="d-inline digitOne">1</p>
 		</div>
+	  </div>
 	);
 };
-
-export default Home;
+	  Home.propTypes = {
+		four: PropType.string
+	};
